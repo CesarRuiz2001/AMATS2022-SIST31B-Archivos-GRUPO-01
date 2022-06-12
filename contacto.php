@@ -6,7 +6,7 @@ include('includes/dbconnection.php');
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SPA-Contacto</title>
+    <title>Contacto</title>
     
     
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -35,13 +35,13 @@ include('includes/dbconnection.php');
   <body>
 	   <?php include_once('includes/header.php');?>
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg-2.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/fo1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate pb-5">
-            <h2 class="mb-0 bread">Contacto</h2>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>Contacto <i class="ion-ios-arrow-forward"></i></span></p>
+            <h2 class="mb-0 bread"  style="color:#FFFFFF">Contacto</h2>
+            <p class="breadcrumbs"><span class="mr-2"><a style="color:#FFFFFF" href="index.php">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span style="color:#FFFFFF">Contacto <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ include('includes/dbconnection.php');
         <div class="row no-gutters d-flex contact-info">
           <?php
 
-$ret=mysqli_query($con,"select * from tblpage where PageType='contactus' ");
+$ret=mysqli_query($con,"select * from tblpagina where tipo_pag='contactus' ");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -63,7 +63,7 @@ while ($row=mysqli_fetch_array($ret)) {
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Dirección</h3>
-	            <p><?php  echo $row['PageDescription'];?></p>
+	            <p><?php  echo $row['descripcion_pag'];?></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -72,7 +72,7 @@ while ($row=mysqli_fetch_array($ret)) {
           			<span class="icon-phone2"></span>
           		</div>
           		<h3 class="mb-4">Número de Contacto</h3>
-	            <p><a href="tel://1234567920">+ <?php  echo $row['MobileNumber'];?></a></p>
+	            <p><a href="tel://1234567920">+ <?php  echo $row['no_telefono'];?></a></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -81,7 +81,7 @@ while ($row=mysqli_fetch_array($ret)) {
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Correo Electrónico</h3>
-	            <p><a href="mailto:hola@cweb.com"><?php  echo $row['Email'];?></a></p>
+	            <p><a href="mailto:hola@cweb.com"><?php  echo $row['correo_electronico'];?></a></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -90,12 +90,20 @@ while ($row=mysqli_fetch_array($ret)) {
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Horario</h3>
-	            <p><?php  echo $row['Timing'];?></p>
+	            <p><?php  echo $row['tiempo'].""." <br> Lunes - Domingo";?></p>
 	          </div>
           </div>
           <?php } ?>
         </div>
       </div>
+
+      <div class="container">
+				<div class="row justify-content-center pb-3">
+        <h3 class="mb-4">&nbsp; &nbsp;  Col. El palmar, Santa Ana, 31 Calle Pte. &nbsp; </h3>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d967.9066049220347!2d-89.56500469836638!3d13.980828388180745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2ssv!4v1654667315440!5m2!1ses-419!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+      </div>  
+      </div><br><br>
     </section>
 			
 	

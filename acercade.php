@@ -6,7 +6,7 @@ include('includes/dbconnection.php');
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SPA-Acerca de</title>
+    <title>Acerca de</title>
     
     
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -34,13 +34,13 @@ include('includes/dbconnection.php');
   </head>
   <body>
 	  <?php include_once('includes/header.php');?>
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg-2.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/fo1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
           <div class="col-md-9 ftco-animate pb-5">
-            <h2 class="mb-0 bread">Acerca de</h2>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>Acerca de <i class="ion-ios-arrow-forward"></i></span></p>
+            <h2 style="color:#FFFFFF" class="mb-0 bread">Acerca de</h2>
+            <p style="color:#FFFFFF" class="breadcrumbs"><span style="color:#FFFFFF" class="mr-2"><a style="color:#FFFFFF" href="index.php">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span style="color:#FFFFFF">Acerca de <i class="ion-ios-arrow-forward"></i></span></p>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ include('includes/dbconnection.php');
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 d-flex">
-						<div class="p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+						<div class="p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/fo2.jpg);">
 				
 							
 							</a>
@@ -59,18 +59,18 @@ include('includes/dbconnection.php');
 					<div class="col-md-6 py-md-5 pb-5 wrap-about pb-md-5 ftco-animate">
 						<?php
 
-$ret=mysqli_query($con,"select * from tblpage where PageType='aboutus' ");
+$ret=mysqli_query($con,"select * from tblpagina where tipo_pag='aboutus' ");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
 	          <div class="heading-section mb-4 mt-md-5">
 	          	<h1 class="big">Acerca de</h1>
-	          	<span class="subheading"><?php  echo $row['PageTitle'];?></span>
+	          	<span class="subheading"><?php  echo $row['titulo_pag'];?></span>
 	           
 	          </div>
 	          <div class="pb-md-5">
-							<p><?php  echo $row['PageDescription'];?>.</p>
+							<p><?php  echo $row['descripcion_pag'] . " <br> ";?>.</p>
 							
 						</div>
 						<?php } ?>
